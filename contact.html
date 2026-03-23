@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Harizone Air</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Harizone <span>Air</span> </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="budget.html">Budget Planner</a></li>
+      <li><a href="weather.html">Weather</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <h1>📩 Contact Harizone Air</h1>
+    <p>Have questions? Need travel advice? We're here to help you plan the perfect trip.</p>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <section class="section">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px;" class="contact-layout">
+
+      <!-- FORM -->
+      <div>
+        <h2 class="section-title">Send Us a Message</h2>
+        <p class="section-subtitle">Fill in the form and our travel team will reply within 24 hours.</p>
+
+        <div class="contact-form">
+          <input type="text" placeholder="Your Full Name" id="c-name" />
+          <input type="email" placeholder="Your Email Address" id="c-email" />
+          <input type="text" placeholder="Subject (e.g. Trip to Bali)" id="c-subject" />
+          <textarea placeholder="Write your message here..." id="c-message"></textarea>
+          <button class="btn" onclick="submitForm()" style="width:100%;">📨 Send Message</button>
+          <div id="form-success" style="display:none; margin-top:16px; background: rgba(50,200,100,0.15); border-left: 4px solid #32c864; border-radius:8px; padding:14px; color: #32c864;">
+            ✅ Thank you! Your message has been sent. We'll reply within 24 hours.
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div>
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Reach us through any of these channels.</p>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-body">
+            <h3>📧 Email Us</h3>
+            <p>info@harizoneair.com<br>support@harizoneair.com</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-body">
+            <h3>📞 Call Us</h3>
+            <p>+1 800 HARIZONE<br>Available Mon–Fri, 8am–8pm EST</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-body">
+            <h3>📍 Our Offices</h3>
+            <p>
+              🇺🇸 New York — 42 Travel Plaza, NY 10001<br>
+              🇬🇧 London — 15 Skyline Road, W1A 1AA<br>
+              🇰🇪 Nairobi — Harizone House, Westlands
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3>⏰ Support Hours</h3>
+            <p>
+              Monday – Friday: 8:00 AM – 8:00 PM<br>
+              Saturday: 9:00 AM – 5:00 PM<br>
+              Sunday: Emergency support only
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Harizone Air ✈️</h3>
+        <p style="color: var(--text-muted); font-size:0.85rem;">Your smart travel companion for every journey around the globe.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="budget.html">Budget</a></li>
+          <li><a href="weather.html">Weather</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="sites.html">Famous Sites</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Harizone Air. All rights reserved.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function submitForm() {
+      const name = document.getElementById("c-name").value.trim();
+      const email = document.getElementById("c-email").value.trim();
+      const message = document.getElementById("c-message").value.trim();
+
+      if (!name || !email || !message) {
+        alert("Please fill in all required fields (name, email, and message).");
+        return;
+      }
+
+      document.getElementById("form-success").style.display = "block";
+      document.getElementById("c-name").value = "";
+      document.getElementById("c-email").value = "";
+      document.getElementById("c-subject").value = "";
+      document.getElementById("c-message").value = "";
+    }
+  </script>
+  <style>
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</body>
+</html>

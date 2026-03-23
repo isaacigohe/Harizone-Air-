@@ -1,0 +1,467 @@
+/* ===== HARIZONE AIR - STYLESHEET ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+  --navy: #041939;
+  --navy-mid: #05173f;
+  --navy-light: #1a3160;
+  --blue-bright: #1e5adc;
+  --blue-sky: #3a80e9;
+  --gold: #219221;
+  --white: #f3f6f2;
+  --light-gray: #f7f7f8;
+  --muted: #8ca0c0;
+  --card-bg: #142643;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* ===== BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--navy);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--navy-mid);
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--green);
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--blue-sky);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--light-gray);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color 0.3s, background 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+  background: rgba(245,200,66,0.1);
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600') center/cover;
+  filter: brightness(0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-content h1 span {
+  color: var(--gold);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: var(--light-gray);
+  margin-bottom: 30px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background: #e6b800;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  margin-left: 10px;
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 70px 60px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* ===== CARDS ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.card-body {
+  padding: 18px;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(30,90,220,0.2);
+  color: var(--blue-sky);
+  border-radius: 20px;
+  padding: 3px 12px;
+  font-size: 0.75rem;
+  margin-top: 10px;
+}
+
+/* ===== WEATHER WIDGET ===== */
+.weather-widget {
+  background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  max-width: 400px;
+}
+
+.weather-widget h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+
+.weather-temp {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.weather-desc {
+  color: var(--muted);
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-top: 5px;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ===== SHARED INPUTS ===== */
+.budget-form input,
+.budget-form select,
+.contact-form input,
+.contact-form textarea,
+.search-bar input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background: var(--navy-light);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: var(--white);
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-bar input {
+  border-radius: 30px;
+  padding: 12px 18px;
+  margin-bottom: 0;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* ===== FORM WRAPPERS ===== */
+.budget-form,
+.contact-form {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 600px;
+  border: 1px solid rgba(255,255,255,0.07);
+}
+
+.budget-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+}
+
+.budget-result {
+  background: rgba(245,200,66,0.12);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  display: none;
+}
+
+/* ===== SEARCH BAR ===== */
+.search-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.search-bar button {
+  padding: 12px 28px;
+  background: var(--blue-bright);
+  color: var(--white);
+  border: none;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-bar button:hover {
+  background: var(--blue-sky);
+}
+
+/* ===== PAGE BANNER ===== */
+.page-banner {
+  background: linear-gradient(rgba(10,22,40,0.7), rgba(10,22,40,0.9)),
+              url('https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=1600') center/cover;
+  padding: 80px 60px 50px;
+  text-align: center;
+}
+
+.page-banner h1 {
+  font-size: 2.5rem;
+  color: var(--gold);
+}
+
+.page-banner p {
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* ===== STATS ===== */
+.stats-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 60px;
+  background: var(--navy-mid);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px 30px;
+}
+
+.stat-item h2 {
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.stat-item p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--navy-mid);
+  padding: 40px 60px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer h3 {
+  color: var(--gold);
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: var(--muted);
+  font-size: 0.88rem;
+  transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.82rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+
+  .page-banner {
+    padding: 60px 20px 40px;
+  }
+
+  .footer,
+  .stats-row {
+    padding: 30px 20px;
+  }
+}

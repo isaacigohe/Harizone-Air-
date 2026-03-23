@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Planner - Harizone Air</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Harizone <span>Air</span> </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="budget.html" class="active">Budget Planner</a></li>
+      <li><a href="weather.html">Weather</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE BANNER -->
+  <div class="page-banner">
+    <h1>💰 Budget Planner</h1>
+    <p>Estimate your trip cost based on your destination, travel style, and duration.</p>
+  </div>
+
+  <!-- BUDGET CALCULATOR -->
+  <section class="section">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex-wrap: wrap;" class="budget-layout">
+
+      <!-- FORM -->
+      <div>
+        <h2 class="section-title">Plan Your Trip Cost</h2>
+        <p class="section-subtitle">Fill in your details and we'll calculate an estimate for you.</p>
+
+        <div class="budget-form">
+          <label for="dest">🌍 Destination</label>
+          <select id="dest">
+            <option value="Paris">Paris, France 🇫🇷</option>
+            <option value="Bali">Bali, Indonesia 🇮🇩</option>
+            <option value="Tokyo">Tokyo, Japan 🇯🇵</option>
+            <option value="Nairobi">Nairobi, Kenya 🇰🇪</option>
+            <option value="Dubai">Dubai, UAE 🇦🇪</option>
+            <option value="Rome">Rome, Italy 🇮🇹</option>
+            <option value="Cairo">Cairo, Egypt 🇪🇬</option>
+            <option value="New York">New York, USA 🇺🇸</option>
+            <option value="Cape Town">Cape Town, South Africa 🇿🇦</option>
+            <option value="Bangkok">Bangkok, Thailand 🇹🇭</option>
+          </select>
+
+          <label for="days">📅 Number of Days</label>
+          <input type="number" id="days" value="7" min="1" max="60" />
+
+          <label for="travelers">👥 Number of Travelers</label>
+          <input type="number" id="travelers" value="2" min="1" max="20" />
+
+          <label for="style">🏨 Travel Style</label>
+          <select id="style">
+            <option value="budget">Budget (Hostels, street food, buses)</option>
+            <option value="standard" selected>Standard (Hotels, restaurants, public transport)</option>
+            <option value="luxury">Luxury (5-star hotels, fine dining, taxis)</option>
+          </select>
+
+          <button class="btn" onclick="calculateBudget()" style="width:100%; margin-top:6px;">
+            💵 Calculate My Budget
+          </button>
+
+          <div id="budget-result" class="budget-result"></div>
+        </div>
+      </div>
+
+      <!-- TIPS SIDE -->
+      <div>
+        <h2 class="section-title">💡 Money-Saving Tips</h2>
+        <p class="section-subtitle">Smart ways to stretch your travel budget further.</p>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-body">
+            <h3>✈️ Book Flights Early</h3>
+            <p>Flights booked 6–8 weeks in advance are often 20–40% cheaper. Use flight comparison tools.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-body">
+            <h3>🏨 Travel Off-Peak</h3>
+            <p>Visit popular destinations in shoulder seasons (April-May, Sep-Oct) for lower costs and fewer crowds.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="card-body">
+            <h3>🍜 Eat Like a Local</h3>
+            <p>Skip tourist restaurants and eat where locals eat — usually better food at a fraction of the price.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3>🎫 Get City Passes</h3>
+            <p>Many cities offer tourist passes with bundled attractions and transport — great value for sightseers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE COMPARISON TABLE -->
+  <section class="section" style="background: var(--navy-mid);">
+    <h2 class="section-title">📊 Daily Cost Comparison by Destination</h2>
+    <p class="section-subtitle">Approximate daily costs (USD) per person.</p>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse: collapse; font-size:0.9rem;">
+        <thead>
+          <tr style="background: var(--navy-light); color: var(--gold);">
+            <th style="padding:14px; text-align:left;">Destination</th>
+            <th style="padding:14px;">Budget/Day</th>
+            <th style="padding:14px;">Standard/Day</th>
+            <th style="padding:14px;">Luxury/Day</th>
+            <th style="padding:14px;">Best Time to Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <td style="padding:12px;">🇫🇷 Paris, France</td>
+            <td style="padding:12px; text-align:center;">$58</td>
+            <td style="padding:12px; text-align:center;">$145</td>
+            <td style="padding:12px; text-align:center;">$490</td>
+            <td style="padding:12px; text-align:center;">Apr – Jun</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">
+            <td style="padding:12px;">🇮🇩 Bali, Indonesia</td>
+            <td style="padding:12px; text-align:center;">$30</td>
+            <td style="padding:12px; text-align:center;">$75</td>
+            <td style="padding:12px; text-align:center;">$250</td>
+            <td style="padding:12px; text-align:center;">May – Sep</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <td style="padding:12px;">🇯🇵 Tokyo, Japan</td>
+            <td style="padding:12px; text-align:center;">$80</td>
+            <td style="padding:12px; text-align:center;">$160</td>
+            <td style="padding:12px; text-align:center;">$400</td>
+            <td style="padding:12px; text-align:center;">Mar – May</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">
+            <td style="padding:12px;">🇰🇪 Nairobi, Kenya</td>
+            <td style="padding:12px; text-align:center;">$40</td>
+            <td style="padding:12px; text-align:center;">$100</td>
+            <td style="padding:12px; text-align:center;">$280</td>
+            <td style="padding:12px; text-align:center;">Jul – Sep</td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <td style="padding:12px;">🇦🇪 Dubai, UAE</td>
+            <td style="padding:12px; text-align:center;">$95</td>
+            <td style="padding:12px; text-align:center;">$200</td>
+            <td style="padding:12px; text-align:center;">$600</td>
+            <td style="padding:12px; text-align:center;">Nov – Mar</td>
+          </tr>
+          <tr style="background: rgba(255,255,255,0.02);">
+            <td style="padding:12px;">🇪🇬 Cairo, Egypt</td>
+            <td style="padding:12px; text-align:center;">$25</td>
+            <td style="padding:12px; text-align:center;">$70</td>
+            <td style="padding:12px; text-align:center;">$200</td>
+            <td style="padding:12px; text-align:center;">Oct – Apr</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <h3>Harizone Air </h3>
+        <p style="color: var(--text-muted); font-size:0.85rem;">Your smart travel companion for every journey around the globe.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="budget.html">Budget</a></li>
+          <li><a href="weather.html">Weather</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="sites.html">Famous Sites</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="#">info@harizoneair.com</a></li>
+          <li><a href="#">+1 800 HARIZONE</a></li>
+          <li><a href="#">24/7 Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Harizone Air. All rights reserved. | Built with ❤️ for travelers.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
+ 
