@@ -4,7 +4,6 @@
 A simple travel assistant website built with HTML, CSS and JavaScript.
 Plan your trip, check live weather, estimate your budget and explore destinations — all in one place.
 
----
 
 ##  Pages
 
