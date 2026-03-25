@@ -207,7 +207,7 @@ function calculateBudget() {
     result.style.display = "block";
     result.innerHTML = `
       <strong>✈️ Trip to ${destination}</strong><br>
-      📅 ${days} days · 👥 ${travelers} traveler(s) · 🏨 ${style}<br><br>
+      📅 ${days} days · 👥 ${travelers} traveler(s) ·  ${style}<br><br>
       🏨 Hotel: $${(cost.hotel * days * travelers).toLocaleString()}<br>
       🍽️ Food: $${(cost.food * days * travelers).toLocaleString()}<br>
       🚌 Transport: $${(cost.transport * days * travelers).toLocaleString()}<br>
