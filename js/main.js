@@ -91,7 +91,7 @@ function errorHTML(type, cityName) {
 
 // ===== TEMPERATURE-BASED TRAVEL ADVISORY =====
 function getTemperatureAdvisory(tempC) {
-  if (tempC >= 28) {
+  if (tempC >= 29) {
     return {
       type: "best",
       icon: "✅",
