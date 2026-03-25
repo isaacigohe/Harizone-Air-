@@ -10,7 +10,7 @@
 
   <!-- NAVBAR -->
   <nav class="navbar">
-    <div class="logo">Harizone <span>Air</span> </div>
+    <div class="logo">Harizone <span>Air</span></div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About us</a></li>
@@ -23,37 +23,53 @@
 
   <!-- PAGE BANNER -->
   <div class="page-banner">
-    <h1>🌤️ Live Weather Checker</h1>
-    <p>Check real-time weather for any city before you book your trip.</p>
+    <h1>Live Weather Checker</h1>
+    <p>Check real-time weather and travel advisories for any city before you book.</p>
   </div>
 
   <!-- WEATHER SEARCH -->
   <section class="section">
     <h2 class="section-title">Search Weather by City</h2>
-    <p class="section-subtitle">Powered by OpenWeatherMap API — live, accurate, and free to use.</p>
+    <p class="section-subtitle">Powered by OpenWeatherMap — live conditions plus a temperature-based travel advisory.</p>
 
-    <div class="search-bar">
-      <input type="text" id="weather-city-input" placeholder="Enter city name (e.g. London, Bali, Tokyo)..." />
-      <button onclick="searchWeather()">🌍 Get Weather</button>
+    <!-- Advisory legend -->
+    <div class="advisory-legend">
+      <span class="legend-pill legend-best"> Best time to travel</span>
+      <span class="legend-pill legend-worst">⚠️ Not advised for travel</span>
     </div>
 
-    <div id="weather-output" style="margin-top: 20px;"></div>
+    <!-- Inset-button search bar -->
+    <div class="weather-search-wrap">
+      <input
+        type="text"
+        id="weather-city-input"
+        placeholder="Enter city (e.g. London, Bali, Tokyo)…"
+      />
+      <button onclick="searchWeather()"> Search</button>
+    </div>
+
+    <!-- Rate-limit notice -->
+    <p class="weather-api-note">
+      ℹ️ Using a free weather API — if a result is slow, wait a moment and search again.
+    </p>
+
+    <div id="weather-output"></div>
   </section>
 
-  <!-- POPULAR CITIES WEATHER -->
+  <!-- QUICK CITIES -->
   <section class="section" style="background: var(--navy-mid);">
-    <h2 class="section-title">📍 Quick City Weather</h2>
-    <p class="section-subtitle">Click a city to instantly see its weather.</p>
+    <h2 class="section-title">Quick City Weather</h2>
+    <p class="section-subtitle">Click a city to see live weather and its travel advisory instantly.</p>
 
-    <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:30px;">
-      <button class="btn" onclick="quickWeather('Paris')">🗼 Paris</button>
-      <button class="btn" onclick="quickWeather('London')">🎡 London</button>
-      <button class="btn" onclick="quickWeather('Tokyo')">🗾 Tokyo</button>
-      <button class="btn" onclick="quickWeather('Dubai')">🏙️ Dubai</button>
-      <button class="btn" onclick="quickWeather('Nairobi')">🦁 Nairobi</button>
-      <button class="btn" onclick="quickWeather('New York')">🗽 New York</button>
-      <button class="btn" onclick="quickWeather('Sydney')">🦘 Sydney</button>
-      <button class="btn" onclick="quickWeather('Cairo')">🏛️ Cairo</button>
+    <div class="quick-city-buttons">
+      <button class="btn" onclick="quickWeather('Paris')">🇫🇷 Paris</button>
+      <button class="btn" onclick="quickWeather('London')">🇬🇧 London</button>
+      <button class="btn" onclick="quickWeather('Tokyo')">🇯🇵 Tokyo</button>
+      <button class="btn" onclick="quickWeather('Dubai')">🇦🇪 Dubai</button>
+      <button class="btn" onclick="quickWeather('Nairobi')">🇰🇪 Nairobi</button>
+      <button class="btn" onclick="quickWeather('New York')"> New York</button>
+      <button class="btn" onclick="quickWeather('Sydney')">🇦🇺 Sydney</button>
+      <button class="btn" onclick="quickWeather('Cairo')">🇪🇬 Cairo</button>
     </div>
 
     <div id="quick-weather-output"></div>
@@ -61,28 +77,28 @@
 
   <!-- TRAVEL WEATHER TIPS -->
   <section class="section">
-    <h2 class="section-title">🌦️ Weather Tips for Travelers</h2>
+    <h2 class="section-title">Weather Tips for Travelers</h2>
     <p class="section-subtitle">Knowing the weather can save your trip!</p>
     <div class="cards-grid">
       <div class="card">
         <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600" alt="Rain"/>
         <div class="card-body">
-          <h3>🌧️ Rainy Seasons</h3>
+          <h3> Rainy Seasons</h3>
           <p>Southeast Asia's monsoon season runs June–September. Pack light rain gear and plan indoor activities as backup.</p>
         </div>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1445307806294-bff7f67ff225?w=600" alt="Summer"/>
         <div class="card-body">
-          <h3>☀️ Summer Travel</h3>
+          <h3> Summer Travel</h3>
           <p>Mediterranean summers are hot and dry. Visit beaches early morning to avoid peak heat. Stay hydrated!</p>
         </div>
       </div>
       <div class="card">
         <img src="https://images.unsplash.com/photo-1467803738586-46b7eb7b16a1?w=600" alt="Winter"/>
         <div class="card-body">
-          <h3>❄️ Winter Escapes</h3>
-          <p>Escape winter by heading to East Africa, Caribbean, or Southeast Asia for warm, sunny weather all December.</p>
+          <h3> Winter Escapes</h3>
+          <p>Escape winter by heading to East Africa, the Caribbean, or Southeast Asia for warm sunny weather all December.</p>
         </div>
       </div>
     </div>
@@ -90,60 +106,60 @@
 
   <!-- BEST SEASONS TABLE -->
   <section class="section" style="background: var(--navy-mid);">
-    <h2 class="section-title">📅 Best Travel Season by Destination</h2>
+    <h2 class="section-title">Best Travel Season by Destination</h2>
     <p class="section-subtitle">Plan your trip at the right time of year.</p>
     <div style="overflow-x:auto;">
-      <table style="width:100%; border-collapse: collapse; font-size:0.9rem;">
+      <table class="seasons-table">
         <thead>
-          <tr style="background: var(--navy-light); color: var(--gold);">
-            <th style="padding:14px; text-align:left;">Destination</th>
-            <th style="padding:14px;">Best Season</th>
-            <th style="padding:14px;">Avoid</th>
-            <th style="padding:14px;">Avg Temp</th>
+          <tr>
+            <th style="text-align:left;">Destination</th>
+            <th>Best Season</th>
+            <th>Avoid</th>
+            <th>Avg Temp</th>
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px;">🇫🇷 Paris, France</td>
-            <td style="padding:12px; text-align:center;">April – June</td>
-            <td style="padding:12px; text-align:center;">Jan – Feb</td>
-            <td style="padding:12px; text-align:center;">18°C</td>
+          <tr>
+            <td>🇫🇷 Paris, France</td>
+            <td class="temp-good">April – June</td>
+            <td class="temp-avoid">Jan – Feb</td>
+            <td>18 °C</td>
           </tr>
-          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">
-            <td style="padding:12px;">🇮🇩 Bali, Indonesia</td>
-            <td style="padding:12px; text-align:center;">May – September</td>
-            <td style="padding:12px; text-align:center;">Jan – Mar (Monsoon)</td>
-            <td style="padding:12px; text-align:center;">27°C</td>
-          </tr>
-          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06);">
-            <td style="padding:12px;">🇯🇵 Tokyo, Japan</td>
-            <td style="padding:12px; text-align:center;">March – May</td>
-            <td style="padding:12px; text-align:center;">July – Aug (humid)</td>
-            <td style="padding:12px; text-align:center;">22°C</td>
-          </tr>
-          <tr style="border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(255,255,255,0.02);">
-            <td style="padding:12px;">🇰🇪 Nairobi, Kenya</td>
-            <td style="padding:12px; text-align:center;">July – September</td>
-            <td style="padding:12px; text-align:center;">April – May (rain)</td>
-            <td style="padding:12px; text-align:center;">24°C</td>
+          <tr class="alt-row">
+            <td>🇮🇩 Bali, Indonesia</td>
+            <td class="temp-good">May – September</td>
+            <td class="temp-avoid">Jan – Mar (Monsoon)</td>
+            <td>27 °C</td>
           </tr>
           <tr>
-            <td style="padding:12px;">🇦🇪 Dubai, UAE</td>
-            <td style="padding:12px; text-align:center;">November – March</td>
-            <td style="padding:12px; text-align:center;">Jun – Aug (extreme heat)</td>
-            <td style="padding:12px; text-align:center;">28°C</td>
+            <td>🇯🇵 Tokyo, Japan</td>
+            <td class="temp-good">March – May</td>
+            <td class="temp-avoid">July – Aug (humid)</td>
+            <td>22 °C</td>
+          </tr>
+          <tr class="alt-row">
+            <td>🇰🇪 Nairobi, Kenya</td>
+            <td class="temp-good">July – September</td>
+            <td class="temp-avoid">April – May (rain)</td>
+            <td>24 °C</td>
+          </tr>
+          <tr>
+            <td>🇦🇪 Dubai, UAE</td>
+            <td class="temp-good">November – March</td>
+            <td class="temp-avoid">Jun – Aug (extreme heat)</td>
+            <td>28 °C</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
- <!-- FOOTER -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <h3>Harizone Air </h3>
-        <p style="color: var(--text-muted); font-size:0.85rem;">Your smart travel companion for every journey around the globe.</p>
+        <h3>Harizone Air</h3>
+        <p style="color:var(--muted); font-size:0.85rem;">Your smart travel companion for every journey around the globe.</p>
       </div>
       <div>
         <h3>Quick Links</h3>
@@ -163,7 +179,7 @@
         </ul>
       </div>
       <div>
-        <h3>Contact</h3> 
+        <h3>Contact</h3>
         <ul>
           <li><a href="#">info@harizoneair.com</a></li>
           <li><a href="#">+1 800 HARIZONE</a></li>

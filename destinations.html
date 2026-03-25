@@ -23,19 +23,22 @@
 
   <!-- PAGE BANNER -->
   <div class="page-banner">
-    <h1>🌍 Explore Destinations</h1>
+    <h1>Explore Destinations</h1>
     <p>Find your perfect travel destination with helpful information and tips.</p>
   </div>
 
   <!-- SEARCH -->
   <section class="section">
-    <div class="search-bar">
-      <input type="text" id="dest-search" placeholder="Search a destination (e.g. Paris, Bali, Tokyo)..." />
-      <button onclick="searchDestination()">🔍 Search</button>
+    <div class="weather-search-wrap">
+      <input
+       type="text"
+        id="dest-search"
+         placeholder="Search a destination (e.g. Paris, Bali, Tokyo)..." />
+      <button onclick="searchDestination()"> Search</button>
     </div>
 
     <!-- CONTINENTS / DESTINATIONS GRID -->
-    <h2 class="section-title">🌏 Asia</h2>
+    <h2 class="section-title">Asia</h2>
     <p class="section-subtitle">Discover the ancient and modern worlds of Asia.</p>
     <div class="cards-grid">
       <div class="card dest-card" data-name="tokyo japan">
@@ -43,7 +46,7 @@
         <div class="card-body">
           <h3>Tokyo, Japan 🇯🇵</h3>
           <p>Ultra-modern city with ancient temples. Famous for sushi, technology, and cherry blossoms.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$80–$200/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$80–$200/day</p>
           <span class="tag">Asia</span>
         </div>
       </div>
@@ -52,7 +55,7 @@
         <div class="card-body">
           <h3>Bali, Indonesia 🇮🇩</h3>
           <p>Tropical paradise with rice terraces, Hindu temples, surf beaches, and beautiful culture.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$30–$100/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$30–$100/day</p>
           <span class="tag">Asia</span>
         </div>
       </div>
@@ -61,13 +64,13 @@
         <div class="card-body">
           <h3>Dubai, UAE 🇦🇪</h3>
           <p>City of gold and skyscrapers. Luxury shopping, desert safaris, and world records.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$100–$400/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$100–$400/day</p>
           <span class="tag">Middle East</span>
         </div>
       </div>
     </div>
 
-    <h2 class="section-title" style="margin-top:50px;">🌍 Africa</h2>
+    <h2 class="section-title" style="margin-top:50px;"> Africa</h2>
     <p class="section-subtitle">Wildlife, culture, and breathtaking landscapes.</p>
     <div class="cards-grid">
       <div class="card dest-card" data-name="nairobi kenya">
@@ -75,7 +78,7 @@
         <div class="card-body">
           <h3>Nairobi, Kenya 🇰🇪</h3>
           <p>Safari gateway. Home to Maasai Mara, Nairobi National Park, and vibrant city life.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$40–$120/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$40–$120/day</p>
           <span class="tag">Africa</span>
         </div>
       </div>
@@ -84,22 +87,22 @@
         <div class="card-body">
           <h3>Cape Town, S. Africa 🇿🇦</h3>
           <p>Table Mountain views, stunning beaches, wine country, and colorful Bo-Kaap district.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$50–$150/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$50–$150/day</p>
           <span class="tag">Africa</span>
         </div>
       </div>
       <div class="card dest-card" data-name="cairo egypt">
-        <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=600" alt="Cairo"/>
+        <img src="{css,js,images}/Cario.jpg" alt="Cairo"/>
         <div class="card-body">
           <h3>Cairo, Egypt 🇪🇬</h3>
           <p>Ancient wonders at every corner — the Great Pyramids, Sphinx, and the Nile River.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$30–$90/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$30–$90/day</p>
           <span class="tag">Africa</span>
         </div>
       </div>
     </div>
 
-    <h2 class="section-title" style="margin-top:50px;">🏰 Europe</h2>
+    <h2 class="section-title" style="margin-top:50px;"> Europe</h2>
     <p class="section-subtitle">History, art, and cuisine across the continent.</p>
     <div class="cards-grid">
       <div class="card dest-card" data-name="paris france">
@@ -107,7 +110,7 @@
         <div class="card-body">
           <h3>Paris, France 🇫🇷</h3>
           <p>Eiffel Tower, Louvre Museum, and world-class bakeries. The city of romance and art.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$100–$250/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$100–$250/day</p>
           <span class="tag">Europe</span>
         </div>
       </div>
@@ -116,7 +119,7 @@
         <div class="card-body">
           <h3>Rome, Italy 🇮🇹</h3>
           <p>Colosseum, Vatican City, and pasta so good you'll plan a second trip just for it.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$90–$200/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$90–$200/day</p>
           <span class="tag">Europe</span>
         </div>
       </div>
@@ -125,7 +128,7 @@
         <div class="card-body">
           <h3>Barcelona, Spain 🇪🇸</h3>
           <p>Gaudi's masterpieces, beaches, tapas, and a buzzing nightlife scene.</p>
-          <p style="margin-top:8px; color: var(--gold);">💰 Budget: ~$80–$180/day</p>
+          <p style="margin-top:8px; color: var(--gold);"> Budget: ~$80–$180/day</p>
           <span class="tag">Europe</span>
         </div>
       </div>
